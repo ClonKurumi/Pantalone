@@ -1,6 +1,7 @@
-CREATE TABLE users (
+CREATE TABLE players (
     id BIGSERIAL PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    role VARCHAR(50) NOT NULL
+    username VARCHAR(255) NOT NULL,
+    mage_class VARCHAR(255) NOT NULL,
+    level INTEGER NOT NULL,
+    mana INTEGER NOT NULL
 );
