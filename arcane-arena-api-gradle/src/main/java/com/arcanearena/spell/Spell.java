@@ -14,11 +14,11 @@ public class Spell {
 
     private String name;
 
-    private String school;
+    private String school = "Fire";
 
-    private Integer manaCost;
+    private Integer manaCost = 0;
 
-    private Integer damage;
+    private Integer damage = 0;
 
     @ManyToOne
     @JoinColumn(name = "player_id")
@@ -26,6 +26,10 @@ public class Spell {
     private Player player;
 
     public Spell() {
+    }
+
+    public Spell(String name) {
+        this.name = name;
     }
 
     public Long getId() {

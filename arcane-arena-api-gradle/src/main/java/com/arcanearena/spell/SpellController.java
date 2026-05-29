@@ -1,8 +1,5 @@
 package com.arcanearena.spell;
 
-import com.arcanearena.spell.dto.SpellRequestDTO;
-import com.arcanearena.spell.dto.SpellResponseDTO;
-import com.arcanearena.spell.service.SpellService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,19 +8,19 @@ import java.util.List;
 @RequestMapping("/api/spells")
 public class SpellController {
 
-    private final SpellService spellService;
+    private final SpellRepository spellRepository;
 
-    public SpellController(SpellService spellService) {
-        this.spellService = spellService;
+    public SpellController(SpellRepository spellRepository) {
+        this.spellRepository = spellRepository;
     }
 
     @PostMapping
-    public SpellResponseDTO create(@RequestBody SpellRequestDTO dto) {
-        return spellService.create(dto);
+    public Spell createSpell(@RequestBody Spell spell) {
+        return spellRepository.save(spell);
     }
 
     @GetMapping
-    public List<Spell> getAll() {
-        return spellService.getAll();
+    public List<Spell> getAllSpells() {
+        return spellRepository.findAll();
     }
 }

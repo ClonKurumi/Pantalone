@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "8c5e0da0-7a87-4d7a-ba92-d3369a4e320f",
+		"name": "Arcane Arena API",
+		"description": "Postman Collection for testing Arcane Arena API endpoints including players, spells, and battles.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Players",
+			"item": [
+				{
+					"name": "Create Player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Daud\",\n  \"mageClass\": \"Fire Mage\",\n  \"level\": 1,\n  \"mana\": 100,\n  \"health\": 100\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"players"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Spells",
+			"item": [
+				{
+					"name": "Create Spell",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Fireball\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/spells",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"spells"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Battle",
+			"item": [
+				{
+					"name": "Cast Spell",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"attackerId\": 21,\n  \"targetId\": 22,\n  \"spellId\": 6,\n  \"spellType\": \"FIREBALL\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/battle/cast",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"battle",
+								"cast"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,10 +1,13 @@
 package com.arcanearena.battle.dto;
 
+import com.arcanearena.model.SpellType;
+
 public class BattleRequestDTO {
 
     private Long attackerId;
     private Long targetId;
     private Long spellId;
+    private SpellType spellType;
 
     public BattleRequestDTO() {
     }
@@ -31,5 +34,13 @@ public class BattleRequestDTO {
 
     public void setSpellId(Long spellId) {
         this.spellId = spellId;
+    }
+
+    public SpellType getSpellType() {
+        return spellType;
+    }
+
+    public void setSpellType(SpellType spellType) {
+        this.spellType = spellType;
     }
 }
